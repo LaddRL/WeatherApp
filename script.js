@@ -32,6 +32,8 @@ function latLon(lat, lon) {
         console.log(data);
         let temp = data.main.temp
         // Add data.wind.speed, data.weather[0].main
+        let windSp = data.wind.speed
+        let weatherMain = data.weather[0].main
         let iconId = data.weather[0].icon
         console.log(temp)
         let cityTitle = document.getElementById("cityTitle")
@@ -39,6 +41,8 @@ function latLon(lat, lon) {
         let weatherIcon = document.getElementById("weatherIcon")
         cityTitle.textContent = data.name
         cityTemp.textContent = temp
+        windSp.textContent = windSp
+        weatherMain.textContent = weatherMain
         let iconUrl = `https://openweathermap.org/img/wn/${iconId}@4x.png`
         weatherIcon.src = iconUrl
     })
